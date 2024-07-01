@@ -47,4 +47,4 @@ Before starting the project, ensure you have the following installed:
 
 ## Brief YouTube Tutorial for the Task
 
-https://youtu.be/Ce-Rg4_QtLI
+https://youtu.be/cKilNoEmstA
