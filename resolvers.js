@@ -1,44 +1,38 @@
-const { users, generateId } = require('./db');
-
-// Vršimo validaciju mejla koristeći regex funkciju
-function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(String(email).toLowerCase());
-}
+const { User } = require('./db');
 
 const resolvers = {
   Query: {
-        users: (_, { filter }) => {
-          let filteredUsers = Array.from(users.values());
-          if (filter) {
-            const lowercaseFilter = filter.toLowerCase();
-            filteredUsers = filteredUsers.filter(user => 
-              user.name.toLowerCase().includes(lowercaseFilter) ||
-              user.email.toLowerCase().includes(lowercaseFilter)
-            );
-          }
-          return filteredUsers;
-        },
+    users: async (_, { filter }) => {
+      if (filter) {
+        return User.find({
+          $or: [
+            { name: { $regex: filter, $options: 'i' } },
+            { email: { $regex: filter, $options: 'i' } }
+          ]
+        });
+      }
+      return User.find();
+    },
   },
   Mutation: {
-    addUser: (_, { name, email }) => {
-      if (!name || name.trim() === '') {
-        throw new Error('Ime je obavezno');
-      }
-      if (!email || !validateEmail(email)) {
-        throw new Error('Neispravan format email adrese');
-      }
-
-      const id = generateId();
-      const newUser = { id, name: name.trim(), email: email.trim() };
-      users.set(id, newUser);
-      return newUser;
-    },
-    deleteUser: (_, { id }) => {
-        if (!users.has(id)) {
-          throw new Error('Korisnik sa datim ID-om ne postoji');
+    addUser: async (_, { name, email }) => {
+      try {
+        const newUser = new User({ name, email });
+        await newUser.save();
+        return newUser;
+      } catch (error) {
+        if (error.code === 11000) {
+          throw new Error('Email adresa već postoji');
         }
-        return users.delete(id);
+        throw error;
+      }
+    },
+    deleteUser: async (_, { id }) => {
+      const result = await User.findByIdAndDelete(id);
+      if (!result) {
+        throw new Error('Korisnik sa datim ID-om ne postoji');
+      }
+      return true;
     },
   },
 };

@@ -1,7 +1,7 @@
 //Get all users
 
 query {
-  users {
+  users(filter: "") {
     id
     name
     email
