@@ -32,7 +32,7 @@ const resolvers = {
       if (!result) {
         throw new Error('User with the given ID does not exist.');
       }
-      return true;
+      return result;
     },
   },
 };
