@@ -1,51 +1,50 @@
-# GraphQL API za upravljanje korisnicima
+# GraphQL API for User Management
 
-## Preduslovi
+## Prerequisites
 
-Pre pokretanja projekta, potrebno je da imate instalirano sledeće:
+Before starting the project, ensure you have the following installed:
 
-- Node.js (preporučena verzija 14 ili novija)
-- npm (obično dolazi sa Node.js)
-- MongoDB (lokalno instaliran ili nalog na MongoDB Atlas)
+- Node.js (recommended version 14 or later)
+- npm (usually comes with Node.js)
+- MongoDB (locally installed or an account on MongoDB Atlas)
 
-## Uputstvo za pokretanje projekta
+## Project Setup Instructions
 
-1. Klonirajte repozitorijum:
-   - git clone https://github.com/Rippah/2C-Home-Test
-   - cd graphql-user-api
+1. Clone the repository:
+   - `git clone https://github.com/Rippah/2C-Home-Test`
+   - `cd graphql-user-api`
    
-3. Instalirajte zavisnosti:
-   - npm install
+2. Install dependencies:
+   - `npm install`
    
-4. Konfigurišite MongoDB vezu:
-   - Ako koristite lokalnu MongoDB instancu, proverite da li je pokrenuta
-   - Ako koristite MongoDB Atlas, ažurirajte connection string u `db.js` fajlu
+3. Configure MongoDB connection:
+   - If using a local MongoDB instance, ensure it is running
+   - If using MongoDB Atlas, update the connection string in the `db.js` file
 
-4. Pokrenite server:
-   - node index.js
+4. Start the server:
+   - `node index.js`
    
-6. Otvorite Apollo Server Playground u browseru:
-   - Obično dostupno na http://localhost:4000
+5. Open Apollo Server Playground in your browser:
+   - Typically available at http://localhost:4000
 
-7. Testirajte API koristeći upite zapisane u `test-apollo.txt` fajlu.
+6. Test the API using queries from the `test-apollo.txt` file.
 
-## Struktura projekta
+## Project Structure
 
-- `index.js`: Glavni fajl aplikacije
-- `schema.js`: GraphQL schema definicija
-- `resolvers.js`: GraphQL resolveri
-- `db.js`: Konfiguracija MongoDB konekcije i model definicija
-- `test-apollo.txt`: Primeri GraphQL upita za testiranje
+- `index.js`: Main application file
+- `schema.js`: GraphQL schema definition
+- `resolvers.js`: GraphQL resolvers
+- `db.js`: MongoDB connection configuration and model definition
+- `test-apollo.txt`: Example GraphQL queries for testing
 
-## Dostupne operacije
+## Available Operations
 
 - Query:
-   - `users`: Dohvata listu svih korisnika (opciono filtriranje)
+   - `users`: Retrieves a list of all users (optional filtering)
 - Mutation:
-   - `addUser`: Dodaje novog korisnika
-   - `deleteUser`: Briše korisnika po ID-u
+   - `addUser`: Adds a new user
+   - `deleteUser`: Deletes a user by ID
 
-
-## Kratak youtube tutorijal zadatka
+## Brief YouTube Tutorial for the Task
 
 https://youtu.be/Ce-Rg4_QtLI
