@@ -8,11 +8,12 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [User!]!
+    users(filter: String): [User!]!
   }
 
   type Mutation {
     addUser(name: String!, email: String!): User!
+    deleteUser(id: ID!): Boolean!
   }
 `;
 

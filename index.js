@@ -14,5 +14,5 @@ const server = new ApolloServer({
 
 // Pokretanje servera
 server.listen().then(({ url }) => {
-  console.log(`🚀 Server spreman na ${url}`);
+  console.log(`Server is running on port: ${url}`);
 });

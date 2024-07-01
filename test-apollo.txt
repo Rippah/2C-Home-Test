@@ -1,0 +1,36 @@
+//Get all users
+
+query {
+  users {
+    id
+    name
+    email
+  }
+}
+
+
+//Add new user (Correct)
+
+mutation {
+  addUser(name: "2C Test", email: "2ctest@example.com") {
+    id
+    name
+    email
+  }
+}
+
+//Add new user (Incorrect)
+
+mutation {
+  addUser(name: "Test User", email: "invalid-email") {
+    id
+    name
+    email
+  }
+}
+
+//Delete user (ID is an example, it's randomized so it will probably be different)
+
+mutation {
+  deleteUser(id: "ly34msokvvjssw64vok") 
+}
