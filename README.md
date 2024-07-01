@@ -44,3 +44,8 @@ Obično dostupno na http://localhost:4000
 - Mutation:
 - `addUser`: Dodaje novog korisnika
 - `deleteUser`: Briše korisnika po ID-u
+
+
+## Kratak youtube tutorijal zadatka
+
+https://youtu.be/Ce-Rg4_QtLI
