@@ -40,10 +40,10 @@ Pre pokretanja projekta, potrebno je da imate instalirano sledeće:
 ## Dostupne operacije
 
 - Query:
-- `users`: Dohvata listu svih korisnika (opciono filtriranje)
+   - `users`: Dohvata listu svih korisnika (opciono filtriranje)
 - Mutation:
-- `addUser`: Dodaje novog korisnika
-- `deleteUser`: Briše korisnika po ID-u
+   - `addUser`: Dodaje novog korisnika
+   - `deleteUser`: Briše korisnika po ID-u
 
 
 ## Kratak youtube tutorijal zadatka
