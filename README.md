@@ -15,17 +15,17 @@ Pre pokretanja projekta, potrebno je da imate instalirano sledeće:
    - cd graphql-user-api
    
 3. Instalirajte zavisnosti:
-   npm install
+   - npm install
    
 4. Konfigurišite MongoDB vezu:
    - Ako koristite lokalnu MongoDB instancu, proverite da li je pokrenuta
    - Ako koristite MongoDB Atlas, ažurirajte connection string u `db.js` fajlu
 
 4. Pokrenite server:
-   node index.js
+   - node index.js
    
 6. Otvorite Apollo Server Playground u browseru:
-Obično dostupno na http://localhost:4000
+   - Obično dostupno na http://localhost:4000
 
 7. Testirajte API koristeći upite zapisane u `test-apollo.txt` fajlu.
 
