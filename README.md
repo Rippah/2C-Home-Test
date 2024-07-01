@@ -34,7 +34,7 @@ Pre pokretanja projekta, potrebno je da imate instalirano sledeće:
 - `index.js`: Glavni fajl aplikacije
 - `schema.js`: GraphQL schema definicija
 - `resolvers.js`: GraphQL resolveri
-- `database.js`: Konfiguracija MongoDB konekcije i model definicija
+- `db.js`: Konfiguracija MongoDB konekcije i model definicija
 - `test-apollo.txt`: Primeri GraphQL upita za testiranje
 
 ## Dostupne operacije
