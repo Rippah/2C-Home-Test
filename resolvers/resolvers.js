@@ -22,7 +22,7 @@ const resolvers = {
         return newUser;
       } catch (error) {
         if (error.code === 11000) {
-          throw new Error('Email adresa već postoji');
+          throw new Error('Email already exists.');
         }
         throw error;
       }
@@ -30,7 +30,7 @@ const resolvers = {
     deleteUser: async (_, { id }) => {
       const result = await User.findByIdAndDelete(id);
       if (!result) {
-        throw new Error('Korisnik sa datim ID-om ne postoji');
+        throw new Error('User with the given ID does not exist.');
       }
       return true;
     },
