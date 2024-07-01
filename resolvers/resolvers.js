@@ -1,4 +1,4 @@
-const { User } = require('./db');
+const { User } = require('../database/db');
 
 const resolvers = {
   Query: {
